@@ -137,7 +137,14 @@
       <section id="program-highlights">
       <section aria-labelledby="highlights-heading">
     <h2 id="highlights-heading">Program highlights</h2>
-    <div class="program-grid">
+    <div class="cards-wrapper">
+      <button class="scroll-left" aria-label="Scroll left">
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 4l-4 4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="scroll-right" aria-label="Scroll right">
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="program-grid">
 
       <article class="program-card">
         <h3>Neighborhood Resource Clinic</h3>
@@ -219,6 +226,7 @@
         </div>
       </article>
 
+    </div>
     </div>
   </section>
 
@@ -341,3 +349,15 @@
 </footer>
 </body>
 </html>
+
+<script>
+  const container = document.querySelector('.program-grid');
+
+document.querySelector('.scroll-right').addEventListener('click', () => {
+  container.scrollBy({ left: 320, behavior: 'smooth' });
+});
+
+document.querySelector('.scroll-left').addEventListener('click', () => {
+  container.scrollBy({ left: -320, behavior: 'smooth' });
+});
+</script>
